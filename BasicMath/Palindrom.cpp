@@ -2,15 +2,15 @@
 using namespace std;
 
 
-bool palindrome(int n) {
-    int revNum = 0;
-    int dup = n;
+bool palindrome(long long n) {
+    long long revNum = 0;
+    long long dup = n;
 
     
     while (n > 0) {
         int ld = n % 10;
         revNum = (revNum * 10) + ld;
-        n = n / 10; 
+        n = n / 10;
     }
 
     
@@ -22,7 +22,7 @@ bool palindrome(int n) {
 }
 
 int main() {
-    int number;
+    long long number;
     cout << "Enter the Number: ";
     cin >> number;
 
