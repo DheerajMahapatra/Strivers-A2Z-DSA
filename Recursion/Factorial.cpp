@@ -1,3 +1,4 @@
+/*
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -16,4 +17,35 @@ int main(){
     cin >> n;
     int fact = factorial(n);
     cout << "Factorial of " << n << " is: "<< fact;
+}
+*/
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int print(int n){
+    
+    if (n == 1){
+        return 1;
+    }
+    
+    return n * print(n - 1);
+    
+}
+
+int main(){
+    int n;
+    cout << "Enter the number: ";
+    cin >> n;
+    
+    int sum = print(n);
+    cout << "Sum of "<<n<<" is: "<<sum;
+    return 0;
 }
