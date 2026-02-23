@@ -26,17 +26,54 @@ int main(){
 
 
 
+/*
+#include<bits/stdc++.h>
+using namespace std;
+
+int factorial(int n){
+    
+if (n == 1){
+    return 1;
+}
+else if (n == 0){
+    return 1;
+}
+
+return n * factorial(n - 1);
+
+}
+
+int main(){
+    int n;
+    cout << "Enter the number: ";
+    cin >> n;
+    
+    int sum = factorial(n);
+    cout << "Sum of "<<n<<" is: "<<sum;
+    return 0;
+}
+*/
+
+
+
+
+
+
+
+
+
+
 
 #include<bits/stdc++.h>
 using namespace std;
 
-int print(int n){
+int factorial(int n){
     
-    if (n == 1){
+    if (n == 0){
         return 1;
     }
     
-    return n * print(n - 1);
+    return n * factorial(n - 1);
     
 }
 
@@ -45,7 +82,7 @@ int main(){
     cout << "Enter the number: ";
     cin >> n;
     
-    int sum = print(n);
+    int sum = factorial(n);
     cout << "Sum of "<<n<<" is: "<<sum;
     return 0;
 }
