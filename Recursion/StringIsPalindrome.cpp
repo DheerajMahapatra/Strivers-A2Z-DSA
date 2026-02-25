@@ -115,6 +115,3 @@ int main(){
         cout << s << " is NOT Palindrome";
     }
 }
-
-
-
