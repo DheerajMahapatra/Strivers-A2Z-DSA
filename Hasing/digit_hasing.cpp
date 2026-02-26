@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int hashh[10000000];
+int hashh[10000000];    //inside main function maximum size of the array is 10 to power 7
 int main(){
     int n;
     cout << "Enter how many elements you want to enter:";
