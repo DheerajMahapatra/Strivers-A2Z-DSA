@@ -32,7 +32,7 @@ int main(){
         cin >> arr[i];
     }
     
-    cout << "Before selection sort: " << "\n";
+    cout << "Before Bubble sort: " << "\n";
     for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
