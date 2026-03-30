@@ -127,13 +127,78 @@ int main() {
 
 
 
-
+/*
 // Optimal
 #include <bits/stdc++.h>
 using namespace std;
 
 
 vector<int> moveZeroes(vector<int>& nums) {
+    int n = nums.size();
+    
+    int j = -1;
+    for(int i = 0; i < n; i++){
+        if(nums[i] == 0){
+            j = i;
+            break;
+        }
+    }
+
+    // no non zero numbers
+    if (j == -1) return nums;
+    
+    for (int i = j+1; i < n; i++){
+        if(nums[i] != 0){
+            swap(nums[i], nums[j]);
+            j++;
+        }
+    }
+    
+    return nums;
+}
+
+
+int main() {
+    //vector<int> arr = {0, 1, 0, 3, 12};
+    
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+    
+    vector<int> arr(n);
+    for(int i = 0; i < n; i++){
+        cout << "Enter element " << i+1 << ": ";
+        cin >> arr[i];
+    }
+    
+    cout << "\n";
+    cout << "Array Before moving zeroes: ";
+    for (auto &val : arr) {
+        cout << val << " ";
+    }
+
+    cout << "\n";
+    vector<int> result = moveZeroes(arr);
+    
+    
+    cout << "\n";
+    cout << "Array After moving zeroes: ";
+    for (auto &val : result) {
+        cout << val << " ";
+    }
+    cout << endl;
+    return 0;
+}
+*/
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void moveZeroes(vector<int>& nums) {
     int n = nums.size();
 
     int j = -1;
@@ -145,7 +210,7 @@ vector<int> moveZeroes(vector<int>& nums) {
     }
 
     // no non zero numbers
-    if (j == -1) return nums;
+    if (j == -1) return ;
 
     for (int i = j+1; i < n; i++){
         if(nums[i] != 0){
@@ -153,8 +218,6 @@ vector<int> moveZeroes(vector<int>& nums) {
             j++;
         }
     }
-
-    return nums;
 }
 
 
@@ -178,12 +241,12 @@ int main() {
     }
 
     cout << "\n";
-    vector<int> result = moveZeroes(arr);
+    moveZeroes(arr);
 
 
     cout << "\n";
     cout << "Array After moving zeroes: ";
-    for (auto &val : result) {
+    for (auto &val : arr) {
         cout << val << " ";
     }
     cout << endl;
