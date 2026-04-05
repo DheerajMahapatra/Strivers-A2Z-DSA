@@ -236,22 +236,22 @@ int main(){
 
 
 
-
+/*
 // Optimal Using XOR
 #include <bits/stdc++.h>
 using namespace std;
 
 int missingNumber(vector<int>& a, int N) {
     int xor1 = 0, xor2 = 0;
-
+    
     int n = N - 1;
-
+    
     // Step 1: XOR of array and 1 to N-1
     for(int i = 0; i < n; i++) {
         xor2 = xor2 ^ a[i];
         xor1 = xor1 ^ (i + 1);
     }
-
+    
     // Step 2: include N
     xor1 = xor1 ^ N;
 
@@ -263,11 +263,58 @@ int main(){
     int N;
     cout << "Enter N (range 1 to N): ";
     cin >> N;
-
+    
     vector<int> arr(N - 1);
-
+    
     cout << "Enter " << N-1 << " elements: \n";
     for(int i = 0; i < N-1; i++){
+        cin >> arr[i];
+    }
+    
+    cout << "\nArray: ";
+    for(auto &val : arr){
+        cout << val << " ";
+    }
+    cout << "\n\n";
+    
+    int result = missingNumber(arr, N);
+    cout << "Missing number is: " << result;
+    
+    return 0;
+}
+*/
+
+
+
+
+
+
+
+
+
+// Striver Solution
+#include <bits/stdc++.h>
+using namespace std;
+
+int missingNumber(vector<int>& nums) {
+    int xorVal = nums.size();
+    
+    for(int i = 0; i < nums.size(); i++){
+        xorVal ^= i ^ nums[i];
+    }
+    
+    return xorVal;
+}
+
+int main(){
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    vector<int> arr(n);
+
+    cout << "Enter " << n << " elements (range 0 to n):\n";
+    for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
 
@@ -277,7 +324,7 @@ int main(){
     }
     cout << "\n\n";
 
-    int result = missingNumber(arr, N);
+    int result = missingNumber(arr);
     cout << "Missing number is: " << result;
 
     return 0;
