@@ -9,7 +9,8 @@ int findMaxConsecutiveOnes(vector<int>& nums) {
         if(nums[i] == 1) {
             cnt++;
             maxi = max(maxi, cnt);
-        } else {
+        }
+        else {
             cnt = 0;
         }
     }
