@@ -61,7 +61,6 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to find the single non-repeating element (Hashing)
 int getSingleElement(vector<int>& arr) {
     int n = arr.size();
 
